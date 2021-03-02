@@ -21,3 +21,17 @@ val purple200 = Color(0xFFBB86FC)
 val purple500 = Color(0xFF6200EE)
 val purple700 = Color(0xFF3700B3)
 val teal200 = Color(0xFF03DAC5)
+val background = Color(0xFFF1F1F1)
+val backgroundDark = Color(0xFF121212)
+
+val petTypeBG = Color(0xFFffd4d2)
+val petTypeIcon = Color(0xFFc83019)
+
+val petTypeBG2 = Color(0xFFd6d0f9)
+val petTypeIcon2 = Color(0xFF4321dd)
+
+val petTypeBG3 = Color(0xFFc0f7f0)
+val petTypeIcon3 = Color(0xFF1ad0b2)
+
+val banner = Color(0xff52a1ab)
+
