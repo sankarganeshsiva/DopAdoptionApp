@@ -34,4 +34,3 @@ val petTypeBG3 = Color(0xFFc0f7f0)
 val petTypeIcon3 = Color(0xFF1ad0b2)
 
 val banner = Color(0xff52a1ab)
-

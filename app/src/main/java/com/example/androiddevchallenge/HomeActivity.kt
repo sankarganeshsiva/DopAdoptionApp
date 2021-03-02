@@ -1,15 +1,49 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.example.androiddevchallenge
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.*
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.material.Card
+import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.LocationOn
@@ -48,16 +82,17 @@ class HomeActivity : AppCompatActivity() {
         Column {
             AddTopBar()
             Surface(color = MaterialTheme.colors.background, modifier = Modifier.fillMaxSize()) {
-                LazyColumn(verticalArrangement = Arrangement.spacedBy(2.dp), content = {
-                    item { AddBanner() }
-                    item { AddBreedListSection() }
-                    item { AddNearMeSection() }
-                    item { AddSuggestedSection() }
-                })
+                LazyColumn(
+                    verticalArrangement = Arrangement.spacedBy(2.dp),
+                    content = {
+                        item { AddBanner() }
+                        item { AddBreedListSection() }
+                        item { AddNearMeSection() }
+                        item { AddSuggestedSection() }
+                    }
+                )
             }
-
         }
-
     }
 
     @Composable
@@ -78,13 +113,16 @@ class HomeActivity : AppCompatActivity() {
                 textAlign = TextAlign.Start
             )
         }
-        LazyRow(horizontalArrangement = Arrangement.spacedBy(16.dp), content = {
-            AdoptionData.breedList.forEachIndexed { _, breed ->
-                item {
-                    BuildBreedHomeItem(breed = breed)
+        LazyRow(
+            horizontalArrangement = Arrangement.spacedBy(16.dp),
+            content = {
+                AdoptionData.breedList.forEachIndexed { _, breed ->
+                    item {
+                        BuildBreedHomeItem(breed = breed)
+                    }
                 }
             }
-        })
+        )
     }
 
     @Composable
@@ -119,7 +157,8 @@ class HomeActivity : AppCompatActivity() {
                         .clickable { }
                         .padding(8.dp)
                         .align(Alignment.CenterHorizontally),
-                    border = BorderStroke(1.dp, MaterialTheme.colors.onPrimary)) {
+                    border = BorderStroke(1.dp, MaterialTheme.colors.onPrimary)
+                ) {
 
                     Text(
                         text = "Reschedule",
@@ -131,8 +170,6 @@ class HomeActivity : AppCompatActivity() {
                     )
                 }
             }
-
-
         }
     }
 
@@ -167,8 +204,6 @@ class HomeActivity : AppCompatActivity() {
                 color = MaterialTheme.colors.primary,
                 textAlign = TextAlign.End
             )
-
-
         }
         LazyRow(
             horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -212,8 +247,6 @@ class HomeActivity : AppCompatActivity() {
                 color = MaterialTheme.colors.primary,
                 textAlign = TextAlign.End
             )
-
-
         }
         LazyRow(
             horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -228,9 +261,11 @@ class HomeActivity : AppCompatActivity() {
 
     @Composable
     private fun BuildAdoptionHomeItem(adoption: Adoption) {
-        Box(modifier = Modifier
-            .size(150.dp, 200.dp)
-            .clickable { redirectToDetails(adoption) }) {
+        Box(
+            modifier = Modifier
+                .size(150.dp, 200.dp)
+                .clickable { redirectToDetails(adoption) }
+        ) {
             Card(
                 modifier = Modifier
                     .size(150.dp, 200.dp)
@@ -290,7 +325,6 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-
     private fun redirectToDetails(adoption: Adoption) {
         val intent = Intent(this, AdoptionDetailsActivity::class.java)
         intent.putExtra("data", adoption)
@@ -299,9 +333,11 @@ class HomeActivity : AppCompatActivity() {
 
     @Composable
     private fun BuildBreedHomeItem(breed: Breed) {
-        Box(modifier = Modifier
-            .size(150.dp, 200.dp)
-            .clickable { redirectToList(breed.name) }) {
+        Box(
+            modifier = Modifier
+                .size(150.dp, 200.dp)
+                .clickable { redirectToList(breed.name) }
+        ) {
             Card(
                 modifier = Modifier
                     .size(150.dp, 200.dp)
@@ -398,7 +434,6 @@ class HomeActivity : AppCompatActivity() {
                             .padding(start = 8.dp)
                     )
                 }
-
             },
             // below line is use to give background color
             backgroundColor = MaterialTheme.colors.surface,
@@ -412,7 +447,6 @@ class HomeActivity : AppCompatActivity() {
             elevation = 2.dp
         )
     }
-
 
     @Composable
     fun Greeting(name: String) {

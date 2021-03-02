@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.example.androiddevchallenge.data
 
 import java.io.Serializable
@@ -33,16 +48,15 @@ data class Breed(
     var image: String = "https://unsplash.com/photos/Sg3XwuEpybU/download?force=true"
 ) : Serializable
 
-
 object AdoptionData {
     val breedList =
         listOf(
-            Breed("All", "No idea about bread","100 Dogs","https://unsplash.com/photos/O67BfLHl4C0/download?force=true"),
-            Breed("Hound","For Hunting","20 Dogs"),
-            Breed("Sporting","Energetic and trainable","20 Dogs","https://unsplash.com/photos/a01Y4ijMFRA/download?force=true"),
-            Breed("Toy","For the love of kids","20 Dogs","https://unsplash.com/photos/r3PsLM9oXuU/download?force=true"),
-            Breed("Working","For helping out","20 Dogs","https://unsplash.com/photos/PUY5xUszd3Y/download?force=true"),
-            Breed("Herding","For helping out","20 Dogs","https://unsplash.com/photos/0nk6XZp7_1E/download?force=true")
+            Breed("All", "No idea about bread", "100 Dogs", "https://unsplash.com/photos/O67BfLHl4C0/download?force=true"),
+            Breed("Hound", "For Hunting", "20 Dogs"),
+            Breed("Sporting", "Energetic and trainable", "20 Dogs", "https://unsplash.com/photos/a01Y4ijMFRA/download?force=true"),
+            Breed("Toy", "For the love of kids", "20 Dogs", "https://unsplash.com/photos/r3PsLM9oXuU/download?force=true"),
+            Breed("Working", "For helping out", "20 Dogs", "https://unsplash.com/photos/PUY5xUszd3Y/download?force=true"),
+            Breed("Herding", "For helping out", "20 Dogs", "https://unsplash.com/photos/0nk6XZp7_1E/download?force=true")
         )
 
     val adoptionsAvailable: List<Adoption> = listOf(

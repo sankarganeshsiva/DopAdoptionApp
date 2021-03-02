@@ -21,20 +21,29 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
-import androidx.compose.material.*
+import androidx.compose.material.Card
+import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.FavoriteBorder
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -45,20 +54,19 @@ import com.example.androiddevchallenge.data.AdoptionData
 import com.example.androiddevchallenge.ui.theme.MyTheme
 import dev.chrisbanes.accompanist.coil.CoilImage
 
-
 class MainActivity : AppCompatActivity() {
-    private lateinit var title:String
+    private lateinit var title: String
+
     @ExperimentalFoundationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        title= intent.getStringExtra("title")?:"Featured"
+        title = intent.getStringExtra("title") ?: "Featured"
         setContent {
             MyTheme {
                 MyApp()
             }
         }
     }
-
 
     // Start building your app here!
     @ExperimentalFoundationApi
@@ -81,10 +89,10 @@ class MainActivity : AppCompatActivity() {
                 navigationIcon = {
                     // navigation icon is use
                     // for drawer icon.
-                    IconButton(onClick = {onBackPressed() }) {
+                    IconButton(onClick = { onBackPressed() }) {
                         // below line is use to
                         // specify navigation icon.
-                        Icon(imageVector = Icons.Filled.ArrowBack,contentDescription = "",tint =  MaterialTheme.colors.onSurface)
+                        Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = "", tint = MaterialTheme.colors.onSurface)
                     }
                 },
                 // below line is use to give background color
@@ -99,9 +107,7 @@ class MainActivity : AppCompatActivity() {
                 elevation = 0.dp
             )
             AddGridLayout()
-
         }
-
     }
 
     @ExperimentalFoundationApi
@@ -130,19 +136,22 @@ class MainActivity : AppCompatActivity() {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(4.dp)
-                .clickable { redirectToDetails(adoption) }, elevation = 2.dp
+                .clickable { redirectToDetails(adoption) },
+            elevation = 2.dp
         ) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(8.dp)
             ) {
-                IconButton(modifier = Modifier.then(
-                    Modifier
-                        .size(24.dp)
-                        .align(Alignment.End)
-                ),
-                    onClick = { }) {
+                IconButton(
+                    modifier = Modifier.then(
+                        Modifier
+                            .size(24.dp)
+                            .align(Alignment.End)
+                    ),
+                    onClick = { }
+                ) {
                     Icon(
                         imageVector = Icons.Default.FavoriteBorder,
                         contentDescription = "",
@@ -192,7 +201,6 @@ class MainActivity : AppCompatActivity() {
                     style = MaterialTheme.typography.caption,
                     textAlign = TextAlign.Center
                 )
-
             }
         }
     }
@@ -202,7 +210,6 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("data", adoption)
         startActivity(intent)
     }
-
 
     @ExperimentalFoundationApi
     @Preview("Light Theme", widthDp = 360, heightDp = 640)
@@ -221,6 +228,4 @@ class MainActivity : AppCompatActivity() {
             MyApp()
         }
     }
-
 }
-
