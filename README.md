@@ -1,17 +1,18 @@
 # Put title of your app here
+Fiacci
 
-<!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
-<!--- You can find both of these in the url bar when you open your repository in github. -->
-![Workflow result](https://github.com/sankarganeshsiva/<REPOSITORY>/workflows/Check/badge.svg)
+![Workflow result](https://github.com/sankarganeshsiva/<DopAdoptionApp/workflows/Check/badge.svg)
 
 
 ## :scroll: Description
-<!--- Describe your app in one or two sentences -->
+The app with list the dogs available for adoptions aroud you in home screen. The home screen also displays a section to help you explore dogs by breed category.
+The details page will contain all the vital information regarding the dog to help you in your decision.
+
 
 
 ## :bulb: Motivation and Context
-<!--- Optionally point readers to interesting parts of your submission. -->
-<!--- What are you especially proud of? -->
+1) The Home screen list item design for the Dog
+2) The detail screen deign
 
 
 ## :camera_flash: Screenshots
