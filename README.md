@@ -4,7 +4,7 @@ Fiacci
 
 
 ## :scroll: Description
-The app with list the dogs available for adoptions aroud you in home screen. The home screen also displays a section to help you explore dogs by breed category.
+The app with list the dogs available for adoptions around you in home screen. The home screen also displays a section to help you explore dogs by breed category.
 The details page will contain all the vital information regarding the dog to help you in your decision.
 
 
