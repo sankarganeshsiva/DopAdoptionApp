@@ -1,7 +1,6 @@
-# Put title of your app here
 Fiacci
 
-![Workflow result](https://github.com/sankarganeshsiva/<DopAdoptionApp/workflows/Check/badge.svg)
+![Workflow result](https://github.com/sankarganeshsiva/DopAdoptionApp/workflows/Check/badge.svg)
 
 
 ## :scroll: Description
