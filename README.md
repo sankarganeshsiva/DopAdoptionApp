@@ -12,6 +12,7 @@ The details page will contain all the vital information regarding the dog to hel
 ## :bulb: Motivation and Context
 1) The Home screen list item design for the Dog
 2) The detail screen deign
+3) Dark mode support
 
 
 ## :camera_flash: Screenshots
